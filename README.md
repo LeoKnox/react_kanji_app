@@ -1,6 +1,7 @@
 # react_kanji_app
 
 Create my kanji app using react and python.
+Technologies to use. Django, react, react native, rest api, mysql, svg.
 
 First objective. Display kanji by grade level. Allow user to move forward and backword through lists to practice writing kanji.
   a) Optional, goto kanji by number, definition or name.
