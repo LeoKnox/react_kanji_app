@@ -7,3 +7,6 @@ class Kanji(models.Model):
     pronounciation = models.CharField(max_length=100, blank=True)
     reading = models.CharField(max_length=100, blank=True)
     grade = models.IntegerField(default = 0)
+
+    def __str__(self):
+        return "{} - {}".format(self.kanji, self.meaning)
