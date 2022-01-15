@@ -1,7 +1,6 @@
 from django.db import models
 
 class Kanji(models.Model):
-    idkanji_dict = models.IntegerField(primary_key=True)
     kanji = models.CharField(max_length=45, blank=True, null=True)
     strokes = models.IntegerField(blank=True, null=True)
     meaning = models.CharField(max_length=45, blank=True, null=True)
