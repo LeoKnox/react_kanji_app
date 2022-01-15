@@ -11,3 +11,7 @@ class KanjiRetrieveAPIView(generics.RetrieveAPIView):
     lookup_field = "idkanji_dict"
     queryset = Kanji.objects.all()
     serializer_class = KanjiDetailSerializer
+
+class KanjiCreateAPIView(generics.CreateAPIView):
+    queryset = Kanji.objects.all()
+    serializer_class = KanjiDetailSerializer
