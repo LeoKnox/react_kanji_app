@@ -3,5 +3,5 @@ from . import views
 
 urlpatterns = [
     path('', views.KanjiListAPIView.as_view(), name='kanji_list'),
-    path('<int:id>/', views.KanjiRetrieveAPIView.as_view(), name='kanji_detail'),
+    path('<int:idkanji_dict>/', views.KanjiRetrieveAPIView.as_view(), name='kanji_detail'),
 ]
