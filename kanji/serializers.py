@@ -13,3 +13,16 @@ class KanjiListSerializer(serializers.ModelSerializer):
             'reading',
             'grade',
         ]
+
+class KanjiDetailSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Kanji
+        fields = [
+            'idkanji_dict',
+            'kanji',
+            'strokes',
+            'meaning',
+            'pronounciation',
+            'reading',
+            'grade',
+        ]
