@@ -5,7 +5,7 @@ class KanjiListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Kanji
         fields = [
-            'id',
+            'idkanji_dict',
             'kanji',
             'strokes',
             'meaning',
