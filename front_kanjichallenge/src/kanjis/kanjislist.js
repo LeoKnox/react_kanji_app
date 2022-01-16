@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import DummyData from './dummydata.json';
+import KanjiDetail from './kanjidetail';
 
 class KanjiList extends Component {
     render() {
         return(
             <div>
-                {DummyData.map( p =>
-                    <h4>{p.kanji} : {p.meaning}</h4>
-                    )
+                {DummyData.map( item => {
+                    return <KanjiDetail p = {item}/>
+                    })
                 }
             </div>
         )
