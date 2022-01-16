@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src="https://www.shareicon.net/data/256x256/2015/09/25/646362_japan_512x512.png" className="App-logo" alt="logo" />
+        <img src="https://banner2.cleanpng.com/20190216/qeb/kisspng-zen-buddhism-symbol-japanese-calligraphy-5c680bc5e67b48.1989893615503226299441.jpg" className="App-logo" alt="logo" />
         <p>
           Web App for learning Kanji
         </p>

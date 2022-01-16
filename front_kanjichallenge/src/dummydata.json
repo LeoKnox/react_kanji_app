@@ -1,0 +1,17 @@
+[
+    {
+        "idkanji_dict":1,
+        "kanji": "akai",
+        "meaning": "red"
+    },
+    {
+        "idkanji_dict":2,
+        "kanji": "aoi",
+        "meaning": "blue"
+    },
+    {
+        "idkanji_dict":3,
+        "kanji": "midori",
+        "meaning": "green"
+    }
+]
