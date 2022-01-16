@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import KanjiList from './kanjis/kanjislist'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <h1>
           Kanji Learn
         </h1>
+        <KanjiList />
       </header>
     </div>
   );
