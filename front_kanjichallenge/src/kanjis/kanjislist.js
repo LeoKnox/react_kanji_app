@@ -4,7 +4,12 @@ import DummyData from './dummydata.json';
 class KanjiList extends Component {
     render() {
         return(
-            <h6>Kanji Name Here</h6>
+            <div>
+                {DummyData.map( p =>
+                    <h4>{p.kanji} : {p.meaning}</h4>
+                    )
+                }
+            </div>
         )
     }
 }
