@@ -1,7 +1,10 @@
 from rest_framework import serializers
 from .models import Kanji
+from rest_framework.reverse import reverse
 
 class KanjiListSerializer(serializers.ModelSerializer):
+    absolute_url = serializers.SerializerMethodField()
+
     class Meta:
         model = Kanji
         fields = [
@@ -13,6 +16,9 @@ class KanjiListSerializer(serializers.ModelSerializer):
             'reading',
             'grade',
         ]
+    
+    def get_absolute_url(self, obj):
+        return reverse('kanji_detail', args=(obj.pk,))
 
 class KanjiDetailSerializer(serializers.ModelSerializer):
     class Meta:
@@ -25,4 +31,5 @@ class KanjiDetailSerializer(serializers.ModelSerializer):
             'pronounciation',
             'reading',
             'grade',
+            'absolute_url'
         ]
