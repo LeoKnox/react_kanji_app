@@ -43,7 +43,7 @@ class KanjiList extends Component {
     render() {
         return(
             <div>
-                {this.state.kanjisData.map( item => {
+                {this.state.kanjisData.map((item) => {
                     return (
                         <h3 key={item.id} onClick={() => this.showKanjiDetails(item)}>
                             {item.kanji}: {item.meaning}
