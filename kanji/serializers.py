@@ -15,6 +15,7 @@ class KanjiListSerializer(serializers.ModelSerializer):
             'pronounciation',
             'reading',
             'grade',
+            'absolute_url'
         ]
     
     def get_absolute_url(self, obj):
@@ -31,5 +32,4 @@ class KanjiDetailSerializer(serializers.ModelSerializer):
             'pronounciation',
             'reading',
             'grade',
-            'absolute_url'
         ]
