@@ -6,8 +6,8 @@ class KanjiDetail extends Component {
         return(
             <div>
                 <h4>{p.idkanji_dict}</h4>
-                <h4>{p.kanji}</h4>
-                <h4>{p.meaning}</h4>
+                <h4>{p.kanji}
+                : {p.meaning}</h4>
             </div>
         )
     }
