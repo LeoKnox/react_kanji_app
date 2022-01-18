@@ -45,8 +45,8 @@ class KanjiList extends Component {
             <div>
                 {this.state.kanjisData.map((item) => {
                     return (
-                        <h3 key={item.id} onClick={() => this.showKanjiDetails(item)}>
-                            {item.kanji}: {item.meaning}
+                        <h3 key={item.idkanji_dict} onClick={() => this.showKanjiDetails(item)}>
+                            {item.kanji}- {item.meaning}
                         </h3>
                     );
                 })}
