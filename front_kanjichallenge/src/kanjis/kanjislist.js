@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import KanjiDetail from './kanjidetail';
+import KanjiForm from './kanjiform';
 
 class KanjiList extends Component {
     constructor(props) {
@@ -43,6 +44,9 @@ class KanjiList extends Component {
     render() {
         return(
             <div>
+                <div>
+                    <KanjiForm />
+                </div>
                 {this.state.kanjisData.map((item) => {
                     return (
                         <h3 key={item.idkanji_dict} onClick={() => this.showKanjiDetails(item)}>
