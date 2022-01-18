@@ -33,6 +33,7 @@ class KanjiForm extends React.Component {
         return (
             <form onSubmit={this.handleSubmit}>
                 <div>
+                    Name: 
                     <input
                         type="text"
                         name="kanji_name"
