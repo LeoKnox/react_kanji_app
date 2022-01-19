@@ -6,7 +6,7 @@ class KanjiForm extends React.Component {
         super(props);
         this.state = {
             obj_to_update: this.props.kanjiUpdate,
-            value: this.props.kanjiUpdate.description,
+            value: this.props.kanjiUpdate.meaning,
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -19,7 +19,7 @@ class KanjiForm extends React.Component {
     handleSubmit(event) {
         event.preventDefault();
         axios
-            .post("http://127.0.0.1:8000".concat(this.state.obj_to_update.update),
+            .patch("http://127.0.0.1:8000".concat(this.state.obj_to_update.update),
             {
                 meaning: this.state.value,
             })
