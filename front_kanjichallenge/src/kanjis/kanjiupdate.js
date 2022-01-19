@@ -6,7 +6,7 @@ class KanjiForm extends React.Component {
         super(props);
         this.state = {
             obj_to_update: this.props.kanjiUpdate,
-            value: this.props.kanjiUpdate.meaning,
+            value: this.props.kanjiUpdate.strokes,
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
