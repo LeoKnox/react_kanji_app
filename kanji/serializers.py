@@ -32,4 +32,8 @@ class KanjiDetailSerializer(serializers.ModelSerializer):
             'pronounciation',
             'reading',
             'grade',
+            'update',
         ]
+    
+    def get_update(self, obj):
+        return reverse('kanji_update', args=(obj.pk,))
