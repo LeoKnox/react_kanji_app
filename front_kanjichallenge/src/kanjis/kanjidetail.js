@@ -9,7 +9,7 @@ class KanjiDetail extends Component {
         };
         this.updateKanjiDetails = this.updateKanjiDetails.bind(this);
     }
-    updateKanjiDetail() {
+    updateKanjiDetails() {
         this.setState({ showComponent: true });
     }
 
