@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import axios from "axios";
 
-class KanjiForm extends React.Component {
+class KanjiForm extends Component {
     constructor(props) {
+        console.log("constructed");
         super(props);
         this.state = {
             obj_to_update: this.props.kanjiUpdate,
-            value: this.props.kanjiUpdate.strokes,
+            value: this.props.kanjiUpdate.reading,
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
