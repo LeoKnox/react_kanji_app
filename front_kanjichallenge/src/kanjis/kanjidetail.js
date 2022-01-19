@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import KanjiUpdate from './kanjiupdate';
 
 class KanjiDetail extends Component {
     constructor(props) {
