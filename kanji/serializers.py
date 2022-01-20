@@ -22,6 +22,9 @@ class KanjiListSerializer(serializers.ModelSerializer):
         return reverse('kanji_detail', args=(obj.pk,))
 
 class KanjiDetailSerializer(serializers.ModelSerializer):
+    update = serializers.SerializerMethodField()
+    delete = serializers.SerializerMethodField()
+
     class Meta:
         model = Kanji
         fields = [
@@ -33,7 +36,11 @@ class KanjiDetailSerializer(serializers.ModelSerializer):
             'reading',
             'grade',
             'update',
+            'delete',
         ]
     
     def get_update(self, obj):
         return reverse('kanji_update', args=(obj.pk,))
+
+    def get_delete(self, obj):
+        return reverse('kanji_delete', args=(obj.pk,))
