@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import KanjiUpdate from './kanjiupdate';
+import axios from 'axios';
 
 class KanjiDetail extends Component {
     constructor(props) {
@@ -8,10 +9,22 @@ class KanjiDetail extends Component {
             showComponent: false,
         };
         this.updateKanjiDetails = this.updateKanjiDetails.bind(this);
+        this.deleteKanji = this.deleteKanji.bind(this);
     }
 
     updateKanjiDetails() {
         this.setState({ showComponent: true });
+    }
+
+    deleteKanji(obj) {
+        console.log(obj);
+        axios.delete("https://127.0.0.1:8000".concat(obj))
+            .then((response) => {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
     }
 
     render() {
@@ -25,6 +38,11 @@ class KanjiDetail extends Component {
                     style={{ backgroundColor: "white" }}
                     onClick={() => this.updateKanjiDetails()}>
                     Update
+                </button>
+                <button
+                    style={{ backgroundColor: "red" }}
+                    onClick={() => this.deleteKanji(obj.delete)}>
+                    Delete
                 </button>
                 {this.state.showComponent ? <KanjiUpdate kanjiupdate={obj} /> : null}
             </div>
