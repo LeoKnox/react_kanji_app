@@ -22,7 +22,7 @@ class KanjiForm extends Component {
         axios
             .patch("http://127.0.0.1:8000".concat(this.state.obj_to_update.update),
             {
-                meaning: this.state.value,
+                reading: this.state.value,
             })
             .then((response) => {
                 console.log(response);
