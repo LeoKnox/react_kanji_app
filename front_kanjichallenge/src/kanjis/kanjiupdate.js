@@ -3,7 +3,8 @@ import axios from "axios";
 
 class KanjiForm extends Component {
     constructor(props) {
-        console.log("constructed"+props.reading);
+        console.log("constructed"+props.kanjiUpdate);
+        Object.keys(props).forEach((prop)=> console.log(prop));
         super(props);
         this.state = {
             obj_to_update: this.props.kanjiUpdate,
