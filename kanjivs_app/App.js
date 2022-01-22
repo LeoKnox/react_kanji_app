@@ -1,15 +1,21 @@
 import React from 'react';
 import { StyleSheet, Text, SafeAreaView } from 'react-native';
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+
 import ListView from "./src/screens/components/list_view";
+import DetailView from "./src/screens/components/detail_view";
+
+const Stack = createStackNavigator();
 
 export default function App() {
-  const aboutapp = "learn and use kanji!"
   return (
-    <SafeAreaView style={styles.container}>
-      <Text style={styles.baseText}>Kanji Challenge App</Text>
-      <Text style={styles.newText}>{aboutapp}</Text>
-      <ListView />
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={ListView} />
+        <Stack.Screen name="Detail" component={DetailView} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
