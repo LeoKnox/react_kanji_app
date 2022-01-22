@@ -9,7 +9,10 @@ class Listview extends Component {
                 <Text style={styles.baseText}>Kanji Training App</Text>
                 <Text style={styles.newText}>{myText}</Text>
                 <Text style={styles.title}>List View</Text>
-                <Button title="list Item, Click for Details" />
+                <Button
+                    title="list Item, Click for Details"
+                    onPress={() => this.props.navigation.navigate("Detail")}
+                />
             </SafeAreaView>
         );
     }
