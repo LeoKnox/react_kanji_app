@@ -4,8 +4,8 @@ import { StyleSheet, View, Text } from "react-native";
 class DetailView extends Component {
     render() {
         return (
-            <View style={StyleSheet.center}>
-                <Text style={StyleSheet.title}>Detail View</Text>
+            <View style={styles.center}>
+                <Text style={styles.title}>Detail View</Text>
             </View>
         )
     }
