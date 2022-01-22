@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import ListView from "./src/screens/components/list_view";
 
 export default function App() {
   const aboutapp = "learn and use kanji!"
@@ -7,6 +8,7 @@ export default function App() {
     <View style={styles.container}>
       <Text style={styles.baseText}>Kanji Challenge App</Text>
       <Text style={styles.newText}>{aboutapp}</Text>
+      <ListView />
     </View>
   );
 }
