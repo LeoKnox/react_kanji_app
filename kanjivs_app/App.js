@@ -1,11 +1,10 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Kanji Challenge App</Text>
+      <Text style={styles.baseText}>Kanji Challenge App</Text>
     </View>
   );
 }
@@ -16,5 +15,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  baseText: {
+    color: "navy",
+    fonstSize: 30,
+    fontStyle: "italic",
   },
 });
