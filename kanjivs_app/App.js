@@ -13,18 +13,20 @@ import ScreenC from "./src/screens/drawer/screenC.js";
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
 
-renderScreenComponents = () => (
-  <Stack.Navigator>
-    <Stack.Screen name="Home" component={ListView} />
-    <Sctrack.Screen name="Detail" component={DetailView} />
-  </Stack.Navigator>
-);
+const renderScreenComponents = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Home" component={ListView} />
+      <Stack.Screen name="Detail" component={DetailView} />
+    </Stack.Navigator>
+  );
+};
 
 export default function App() {
   return (
     <NavigationContainer>
       <Drawer.Navigator>
-        <Drawer.Screen name="Home" children={this.renderScreenComponents} />
+        <Drawer.Screen name="Home" children={renderScreenComponents} />
         <Drawer.Screen name="Screen A" component={ScreenA} />
         <Drawer.Screen name="Screen B" component={ScreenB} />
         <Drawer.Screen name="Screen C" component={ScreenC} />
