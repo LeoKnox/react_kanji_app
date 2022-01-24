@@ -5,7 +5,7 @@ class TabOne extends Component {
     render() {
         return (
             <View style={styles.center}>
-                <Text style={styules.title}>Tab One Screen</Text>
+                <Text style={styles.title}>Tab One Screen</Text>
             </View>
         );
     }
