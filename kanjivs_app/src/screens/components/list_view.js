@@ -10,10 +10,15 @@ class Listview extends Component {
         };
     }
 
-    componentDidMount() {
-        client.get("/").then((response) => {
-            this.setState({ data: response.data });
-        });
+    async componentDidMount() {
+        try {
+            const response = await client.get("/");
+            if (!response.ok) {
+                this.setState({ data: response.data });
+            }
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     render() {
@@ -28,6 +33,7 @@ class Listview extends Component {
                     title="list Item, Click for Details"
                     onPress={() => this.props.navigation.navigate("Detail")}
                 />
+                <Text>{data.length} Kanji</Text>
                 <FlatList
                     data = {data}
                     keyExtractor={(item) => item.idkanji_dict.toString()}
