@@ -1,8 +1,23 @@
 import React, { Component } from "react";
-import { StyleSheet, SafeAreaView, Text, Button } from "react-native";
+import { StyleSheet, SafeAreaView, Text, Button, FlatList } from "react-native";
+import client from "./../../api/client";
 
 class Listview extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            data: [],
+        };
+    }
+
+    componentDidMount() {
+        client.get("/").then((response) => {
+            this.setState({ data: response.data });
+        });
+    }
+
     render() {
+        const { data } = this.state;
         const myText = "learn Kanji while I learning programming";
         return (
             <SafeAreaView style={styles.center}>
@@ -12,6 +27,15 @@ class Listview extends Component {
                 <Button
                     title="list Item, Click for Details"
                     onPress={() => this.props.navigation.navigate("Detail")}
+                />
+                <FlatList
+                    data = {data}
+                    keyExtractor={(item) => item.id.toString()}
+                    renderItem={({ item }) => (
+                        <Text style={styles.itemText}>
+                            {item.kanji}: {item.meaning}
+                        </Text>
+                    )}
                 />
             </SafeAreaView>
         );
@@ -35,6 +59,10 @@ const styles = StyleSheet.create({
     },
     newText: {
         color: "red",
+    },
+    itemText: {
+        color: "green",
+        fontSize: 20,
     }
 });
 
