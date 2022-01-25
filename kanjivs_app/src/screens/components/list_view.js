@@ -17,6 +17,7 @@ class Listview extends Component {
     }
 
     render() {
+        const { data } = this.state;
         const myText = "learn Kanji while I learning programming";
         return (
             <SafeAreaView style={styles.center}>
@@ -28,8 +29,8 @@ class Listview extends Component {
                     onPress={() => this.props.navigation.navigate("Detail")}
                 />
                 <FlatList
-                    data={data}
-                    keyExtractor={(item) => item.id.toString()}
+                    data = {data}
+                    keyExtractor={(item) => item.idkanji_dict.toString()}
                     renderItem={({ item }) => (
                         <Text style={styles.itemText}>
                             {item.kanji}: {item.meaning}
