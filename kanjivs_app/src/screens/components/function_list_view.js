@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { StyleSheet, SafeAreaView, Text, FlatList } from "react-native";
+import { StyleSheet, SafeAreaView, Text, FlatList, TouchableOpacity } from "react-native";
 import client from "./../../api/client";
 
-const ListView = () => {
+const ListView = ({ navigation }) => {
     const [data, setData] = useState([]);
 
     const getList = async () => {
@@ -25,9 +25,15 @@ const ListView = () => {
                 keyExtractor={(item) => item.idkanji_dict.toString()}
                 renderItem={({ item }) => {
                     return (
-                        <Text style={styles.itemText}>
-                            {item.kanji}: {item.meaning}
-                        </Text>
+                        <TouchableOpacity
+                            onPress={() => {
+                                navigation.navigate("Kanji", {objurl: item.absolute_url, hey: "It's Kanji"});
+                            }}
+                        >
+                            <Text style={styles.itemText}>
+                                {item.kanji}: {item.meaning}
+                            </Text>
+                        </TouchableOpacity>
                     );
                 }}
             />
