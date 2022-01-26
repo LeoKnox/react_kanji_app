@@ -7,7 +7,7 @@ const DetailView = ({ navigation, route }) => {
     return (
         <View style={styles.center}>
             <Text style={styles.title}>{hey}</Text>
-            <text style={styles.title}>{objurl}</text>
+            <Text style={styles.title}>{objurl}</Text>
         </View>
     );
 };

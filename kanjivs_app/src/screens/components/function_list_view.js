@@ -27,7 +27,7 @@ const ListView = ({ navigation }) => {
                     return (
                         <TouchableOpacity
                             onPress={() => {
-                                navigation.navigate("Kanji", {objurl: item.absolute_url, hey: "It's Kanji"});
+                                navigation.navigate("Detail", {objurl: item.absolute_url, hey: "It's Kanji"});
                             }}
                         >
                             <Text style={styles.itemText}>
