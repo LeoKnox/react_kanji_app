@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { StyleSheet, SafeAreaView, Text, FlatList, TouchableOpacity } from "react-native";
 import client from "./../../api/client";
+import Card from "./shared/card";
 
 const ListView = ({ navigation }) => {
     const [data, setData] = useState([]);
@@ -30,9 +31,10 @@ const ListView = ({ navigation }) => {
                                 navigation.navigate("Detail", {objurl: item.absolute_url, hey: "It's Kanji"});
                             }}
                         >
-                            <Text style={styles.itemText}>
-                                {item.kanji}: {item.meaning}
-                            </Text>
+                            <Card
+                                kanji={item.kanji}
+                                meaning={item.meaning}
+                            />
                         </TouchableOpacity>
                     );
                 }}
