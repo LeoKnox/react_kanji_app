@@ -7,5 +7,5 @@ urlpatterns = [
     path('create/', views.KanjiCreateAPIView.as_view(), name='kanji_create'),
     path('update/<int:idkanji_dict>/', views.KanjiRetrieveUpdateAPIView.as_view(), name='kanji_update'),
     path('delete/<int:idkanji_dict>/', views.KanjiDestroyAPIView.as_view(), name='kanji_delete'),
-    path('grade/<int:grade/', views.KanjiGradeAPIView.as_view(), name='kanji_grade'),
+    path('grade/<int:grade>/', views.KanjiGradeAPIView.as_view(), name='kanji_grade'),
 ]
