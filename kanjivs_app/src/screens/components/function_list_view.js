@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { StyleSheet, SafeAreaView, Text, FlatList, TouchableOpacity, CheckBox } from "react-native";
 import client from "./../../api/client";
 import Card from "./shared/card";
+import { green } from "colorette";
 
 const ListView = ({ navigation }) => {
     const [data, setData] = useState([]);
@@ -23,6 +24,12 @@ const ListView = ({ navigation }) => {
             <Text style={styles.newText}>{mytext}</Text>
             <Text>{data.length} Kanjis</Text>
             <label>Grade 1</label>
+            <CheckBox
+                value={isSelected}
+                onValueChange={setSelection}
+                style={styles.checkbox}
+            />
+            <label>Grade 2</label>
             <CheckBox
                 value={isSelected}
                 onValueChange={setSelection}
@@ -71,7 +78,9 @@ const styles = StyleSheet.create({
     itemText: {
         color: "green",
         fontSize: 20,
-    }
+    },
+    checkbox: {
+    },
 });
 
 export default ListView;
