@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { StyleSheet, SafeAreaView, Text, FlatList, TouchableOpacity } from "react-native";
+import { StyleSheet, SafeAreaView, Text, FlatList, TouchableOpacity, CheckBox } from "react-native";
 import client from "./../../api/client";
 import Card from "./shared/card";
 
 const ListView = ({ navigation }) => {
     const [data, setData] = useState([]);
+    const [isSelected, setSelection] = useState(false);
 
     const getList = async () => {
         const response = await client.get("/");
@@ -21,6 +22,12 @@ const ListView = ({ navigation }) => {
             <Text style={styles.baseText}>Kanji Learning App</Text>
             <Text style={styles.newText}>{mytext}</Text>
             <Text>{data.length} Kanjis</Text>
+            <label>Grade 1</label>
+            <CheckBox
+                value={isSelected}
+                onValueChange={setSelection}
+                style={styles.checkbox}
+            />
             <FlatList
                 data={data}
                 keyExtractor={(item) => item.idkanji_dict.toString()}
