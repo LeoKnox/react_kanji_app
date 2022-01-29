@@ -10,7 +10,7 @@ const ListView = ({ navigation }) => {
     const grade = 1;
 
     const getList = async () => {
-        const response = await client.get("/grade/" + grade);
+        const response = await client.get("/grade/1");
         setData(response.data);
     };
 
