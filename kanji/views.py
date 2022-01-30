@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from rest_framework import generics
+from rest_framework import generics, filters
 from .serializers import KanjiListSerializer, KanjiDetailSerializer
 from .models import Kanji
 
@@ -8,14 +8,10 @@ class KanjiListAPIView(generics.ListAPIView):
     serializer_class = KanjiListSerializer
 
 class KanjiGradeAPIView(generics.ListAPIView):
-    print("eeee")
-    lookup_field = "grade"
     queryset = Kanji.objects.all()
-    def get_query(self):
-        grade = self.kwargs['grade']
-        print(grade+"dddd")
-        return kanji.objectsfilter(grade = grade)
     serializer_class = KanjiListSerializer
+    filter_backends = [filters.SearchFilter]
+    search_fileds = ['grade']
 
 class KanjiRetrieveAPIView(generics.RetrieveAPIView):
     lookup_field = "idkanji_dict"
