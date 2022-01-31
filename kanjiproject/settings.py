@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'corsheaders',
+    'django_filters',
     'kanji',
     'rest_framework',
 ]
@@ -75,7 +76,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'kanjiproject.wsgi.application'
 
-
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',)
+}
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
