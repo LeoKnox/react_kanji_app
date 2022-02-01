@@ -14,8 +14,8 @@ class KanjiGradeAPIView(generics.ListAPIView):
     #search_fields = ("grade")
     def get_queryset(self):
         queryset = Kanji.objects.all()
-        grade = self.request.query.params.get('grade', '')
-        print("******" + grade)
+        grade = self.request.query_params.get('grade', '')
+        print("******" + str(grade))
         return queryset.filter(grade=grade)
     
 
