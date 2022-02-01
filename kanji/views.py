@@ -9,13 +9,10 @@ class KanjiListAPIView(generics.ListAPIView):
 
 class KanjiGradeAPIView(generics.ListAPIView):
     serializer_class = KanjiListSerializer
-    #queryset = Kanji.objects.all()
-    #filter_backends = (filters.SearchFilter,)
-    #search_fields = ("grade")
     def get_queryset(self):
         queryset = Kanji.objects.all()
-        grade = self.request.query_params.get('grade', '')
-        print("******" + str(grade))
+        grade = self.request.query_params.get('grade',)
+        # http://127.0.0.1:8000/grade/?grade=2
         return queryset.filter(grade=grade)
     
 
