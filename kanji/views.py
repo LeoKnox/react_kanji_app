@@ -8,10 +8,10 @@ class KanjiListAPIView(generics.ListAPIView):
     serializer_class = KanjiListSerializer
 
 class KanjiGradeAPIView(generics.ListAPIView):
-    queryset = Kanji.objects.all()
     serializer_class = KanjiListSerializer
+    queryset = Kanji.objects.all()
     filter_backends = (filters.SearchFilter,)
-    search_fields = ('grade')
+    search_fields = ("grade")
 
 class KanjiRetrieveAPIView(generics.RetrieveAPIView):
     lookup_field = "idkanji_dict"
