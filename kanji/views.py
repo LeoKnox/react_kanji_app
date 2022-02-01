@@ -1,7 +1,8 @@
 from django.shortcuts import render
-from rest_framework import generics, filters
+from rest_framework import generics
 from .serializers import KanjiListSerializer, KanjiDetailSerializer
 from .models import Kanji
+from django_filters.rest_framework import DjangoFilterBackend
 
 class KanjiListAPIView(generics.ListAPIView):
     queryset = Kanji.objects.all()
@@ -12,6 +13,7 @@ class KanjiGradeAPIView(generics.ListAPIView):
     def get_queryset(self):
         queryset = Kanji.objects.all()
         grade = self.request.query_params.get('grade',)
+        print("*******" + grade)
         # http://127.0.0.1:8000/grade/?grade=2
         return queryset.filter(grade=grade)
     
