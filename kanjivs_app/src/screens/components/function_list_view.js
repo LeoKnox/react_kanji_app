@@ -7,10 +7,10 @@ import { green } from "colorette";
 const ListView = ({ navigation }) => {
     const [data, setData] = useState([]);
     const [isSelected, setSelection] = useState(false);
-    const grade = 1;
+    const grade = 2;
 
     const getList = async () => {
-        const response = await client.get("/grade/search=1");
+        const response = await client.get("/grade/?grade="+grade);
         setData(response.data);
     };
 
