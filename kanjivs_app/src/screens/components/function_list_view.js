@@ -29,8 +29,8 @@ const ListView = ({ navigation }) => {
             <Text>{data.length} Kanjis</Text>
             <label>Grade 1</label>
             <CheckBox
-                value={1}
-                onValueChange={setSelections}
+                value={"1"}
+                onValueChange={(newValue) => setSelections(newValue)}
                 style={styles.checkbox}
             />
             <label>Grade 2</label>
