@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { StyleSheet, SafeAreaView, Text, FlatList, TouchableOpacity, CheckBox } from "react-native";
 import client from "./../../api/client";
 import Card from "./shared/card";
-import { green } from "colorette";
 
 const ListView = ({ navigation }) => {
     const [data, setData] = useState([]);
@@ -17,6 +16,10 @@ const ListView = ({ navigation }) => {
     useEffect(() => {
         getList();
     }, []);
+
+    const setSelection = (value) => {
+        console.log(value);
+    };
     
     const mytext = "learn Kanji";
     return (
@@ -26,13 +29,13 @@ const ListView = ({ navigation }) => {
             <Text>{data.length} Kanjis</Text>
             <label>Grade 1</label>
             <CheckBox
-                value={isSelected}
+                value={1}
                 onValueChange={setSelection}
                 style={styles.checkbox}
             />
             <label>Grade 2</label>
             <CheckBox
-                value={isSelected}
+                value={2}
                 onValueChange={setSelection}
                 style={styles.checkbox}
             />
