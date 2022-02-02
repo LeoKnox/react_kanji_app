@@ -17,7 +17,7 @@ const ListView = ({ navigation }) => {
         getList();
     }, []);
 
-    const setSelection = (value) => {
+    const setSelections = (value) => {
         console.log(value);
     };
     
@@ -30,7 +30,7 @@ const ListView = ({ navigation }) => {
             <label>Grade 1</label>
             <CheckBox
                 value={1}
-                onValueChange={setSelection}
+                onValueChange={setSelections}
                 style={styles.checkbox}
             />
             <label>Grade 2</label>
