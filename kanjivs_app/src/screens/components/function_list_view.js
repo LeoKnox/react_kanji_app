@@ -17,7 +17,7 @@ const ListView = ({ navigation }) => {
         getList();
     }, []);
 
-    const setSelections = (value) => {
+    const setSelections = (key, value) => {
         console.log(value);
     };
     
@@ -29,7 +29,7 @@ const ListView = ({ navigation }) => {
             <Text>{data.length} Kanjis</Text>
             <label>Grade 1</label>
             <CheckBox
-                value={"1"}
+                value={1}
                 onValueChange={(newValue) => setSelections(newValue)}
                 style={styles.checkbox}
             />
