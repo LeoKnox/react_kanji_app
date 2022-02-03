@@ -19,7 +19,10 @@ const ListView = ({ navigation }) => {
 
     const setSelections = (value) => {
         if (isSelected === false) {
+            isSelected = true
             console.log("one");
+        } else {
+            isSelected = false
         }
         console.log(value);
     };
@@ -40,7 +43,12 @@ const ListView = ({ navigation }) => {
             <label>Grade 2</label>
             <CheckBox
                 value={isSelected}
-                onValueChange={setSelection}
+                onValueChange={
+                    function() {
+                        setSelection
+                        console.log("works")
+                    }
+                }
                 checkedColor="blue"
                 style={styles.checkbox}
             />
