@@ -18,6 +18,9 @@ const ListView = ({ navigation }) => {
     }, []);
 
     const setSelections = (value) => {
+        if (isSelected === false) {
+            console.log("one");
+        }
         console.log(value);
     };
     
@@ -29,6 +32,7 @@ const ListView = ({ navigation }) => {
             <Text>{data.length} Kanjis</Text>
             <label>Grade 1</label>
             <CheckBox
+                title="One"
                 value={1}
                 onValueChange={(newValue) => setSelections(newValue)}
                 style={styles.checkbox}
@@ -37,9 +41,10 @@ const ListView = ({ navigation }) => {
             <CheckBox
                 value={isSelected}
                 onValueChange={setSelection}
+                checkedColor="blue"
                 style={styles.checkbox}
             />
-            <text>ddd: {isSelected} </text>
+            <Text>ddd: {isSelected} </Text>
             <FlatList
                 data={data}
                 keyExtractor={(item) => item.idkanji_dict.toString()}
