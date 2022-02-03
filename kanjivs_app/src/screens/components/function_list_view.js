@@ -29,16 +29,17 @@ const ListView = ({ navigation }) => {
             <Text>{data.length} Kanjis</Text>
             <label>Grade 1</label>
             <CheckBox
-                value={data.length}
+                value={1}
                 onValueChange={(newValue) => setSelections(newValue)}
                 style={styles.checkbox}
             />
             <label>Grade 2</label>
             <CheckBox
-                value={2}
+                value={isSelected}
                 onValueChange={setSelection}
                 style={styles.checkbox}
             />
+            <text>ddd: {isSelected} </text>
             <FlatList
                 data={data}
                 keyExtractor={(item) => item.idkanji_dict.toString()}
