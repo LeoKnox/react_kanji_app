@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { StyleSheet, SafeAreaView, Text, FlatList, TouchableOpacity, CheckBox } from "react-native";
+import { Pressable, StyleSheet, SafeAreaView, Text, FlatList, TouchableOpacity, CheckBox } from "react-native";
 import client from "./../../api/client";
 import Card from "./shared/card";
 
@@ -14,11 +14,20 @@ const ListView = ({ navigation }) => {
     };
 
     function MyCheckbox() {
-        const [check, onChange] = useState(false);
+        const [checked, onChange] = useState(false);
 
         function onCheckmarkPress() {
             onChange(!checked);
+            console.log("ggg");
         }
+
+        return (
+            <Pressable
+                onPress={onCheckmarkPress()}>
+                    t
+                    {checked}
+            </Pressable>
+        );
     }
 
     useEffect(() => {
