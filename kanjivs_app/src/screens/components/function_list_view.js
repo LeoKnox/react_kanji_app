@@ -13,6 +13,14 @@ const ListView = ({ navigation }) => {
         setData(response.data);
     };
 
+    function MyCheckbox() {
+        const [check, onChange] = useState(false);
+
+        function onCheckmarkPress() {
+            onChange(!checked);
+        }
+    }
+
     useEffect(() => {
         getList();
     }, []);
@@ -52,6 +60,8 @@ const ListView = ({ navigation }) => {
                 checkedColor="blue"
                 style={styles.checkbox}
             />
+            <label>Grade 3</label>
+            <MyCheckbox />
             <Text>ddd: {isSelected} </Text>
             <FlatList
                 data={data}
