@@ -16,7 +16,6 @@ const ListView = ({ navigation }) => {
     const MyCheckbox = () => {
         const [checked, onChange] = useState(false);
 
-        onChange(!checked);
         console.log("ggg");
     }
 
