@@ -16,18 +16,8 @@ const ListView = ({ navigation }) => {
     const MyCheckbox = () => {
         const [checked, onChange] = useState(false);
 
-        function onCheckmarkPress() {
-            onChange(!checked);
-            console.log("ggg");
-        }
-
-        return (
-            <Pressable
-                onPress={onCheckmarkPress()}>
-                    t
-                    {checked}
-            </Pressable>
-        );
+        onChange(!checked);
+        console.log("ggg");
     }
 
     useEffect(() => {
