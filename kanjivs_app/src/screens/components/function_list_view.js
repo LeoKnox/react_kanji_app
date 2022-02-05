@@ -13,7 +13,7 @@ const ListView = ({ navigation }) => {
         setData(response.data);
     };
 
-    function MyCheckbox() {
+    const MyCheckbox = () => {
         const [checked, onChange] = useState(false);
 
         function onCheckmarkPress() {
