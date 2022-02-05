@@ -13,10 +13,8 @@ const ListView = ({ navigation }) => {
         setData(response.data);
     };
 
-    const MyCheckbox = () => {
-        const [checked, onChange] = useState(false);
-
-        console.log("ggg");
+    const MyCheckbox = (value) => {
+        console.log(value);
     }
 
     useEffect(() => {
