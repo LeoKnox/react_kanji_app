@@ -59,7 +59,7 @@ const ListView = ({ navigation }) => {
                 style={styles.checkbox}
             />
             <label>Grade 3</label>
-            <MyCheckbox />
+            <MyCheckbox grade = "3" />
             <Text>ddd: {isSelected} </Text>
             <FlatList
                 data={data}
