@@ -13,13 +13,14 @@ const ListView = ({ navigation }) => {
         setData(response.data);
     };
 
-    function MyCheckbox({grade, onChecked, checked}) {
+    function MyCheckbox({grade}) {
+        const [isSelected, setSelection] = useState(false);
         console.log(grade);
         return (
             <CheckBox
                 title="My Checkbox"
-                checked={checked}
-                onPress={onChecked}
+                checked={isSelected}
+                onPress={() => setSelection(!isSelected)}
             />
         )
     }
