@@ -13,16 +13,14 @@ const ListView = ({ navigation }) => {
         setData(response.data);
     };
 
-    function MyCheckbox({value}) {
+    function MyCheckbox({value, onChecked, checked}) {
         console.log("check");
         return (
-            <View>
-                <CheckBox
-                    title="My Checkbox"
-                    checked={check}
-                    onPress={() => toggleChecked(!checked)}
-                />
-            </View>
+            <CheckBox
+                title="My Checkbox"
+                checked={checked}
+                onPress={onChecked}
+            />
         )
     }
 
