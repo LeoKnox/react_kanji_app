@@ -17,11 +17,13 @@ const ListView = ({ navigation }) => {
         const [isSelected, setSelection] = useState(false);
         console.log(grade);
         return (
+            <>
             <CheckBox
                 title="My Checkbox"
-                checked={isSelected}
-                onPress={() => setSelection(!isSelected)}
+                onValueChange={isSelected}
             />
+            <Text>T: {isSelected ? "1" : "2"}</Text>
+            </>
         )
     }
 
@@ -63,7 +65,6 @@ const ListView = ({ navigation }) => {
             <MyCheckbox
                 grade = "3"
                 checked={isSelected}
-                onPress={() => setSelection(!isSelected)}
             />
             <Text>ddd: {isSelected} </Text>
             <FlatList
