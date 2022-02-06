@@ -59,7 +59,11 @@ const ListView = ({ navigation }) => {
                 style={styles.checkbox}
             />
             <label>Grade 3</label>
-            <MyCheckbox grade = "3" />
+            <MyCheckbox
+                grade = "3"
+                checked={isSelected}
+                onPress={() => setSelection(!isSelected)}
+            />
             <Text>ddd: {isSelected} </Text>
             <FlatList
                 data={data}
