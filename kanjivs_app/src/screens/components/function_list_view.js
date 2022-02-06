@@ -15,7 +15,9 @@ const ListView = ({ navigation }) => {
 
     function MyCheckbox({grade}) {
         const [isSelected, setSelection] = useState(false);
-        console.log(grade);
+        if (isSelected) {
+            console.log(grade);
+        }
         return (
             <>
             <CheckBox
