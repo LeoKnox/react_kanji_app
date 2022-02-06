@@ -13,8 +13,8 @@ const ListView = ({ navigation }) => {
         setData(response.data);
     };
 
-    function MyCheckbox() {
-        console.log("check");
+    const MyCheckbox =() => {
+        console.log("checked");
     }
 
     useEffect(() => {
