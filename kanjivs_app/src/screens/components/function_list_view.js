@@ -13,8 +13,17 @@ const ListView = ({ navigation }) => {
         setData(response.data);
     };
 
-    function MyCheckbox() {
+    function MyCheckbox({value}) {
         console.log("check");
+        return (
+            <View>
+                <CheckBox
+                    title="My Checkbox"
+                    checked={check}
+                    onPress={() => toggleChecked(!checked)}
+                />
+            </View>
+        )
     }
 
     useEffect(() => {
@@ -47,13 +56,8 @@ const ListView = ({ navigation }) => {
             <label>Grade 2</label>
             <CheckBox
                 value={isSelected}
-                onValueChange={
-                    function() {
-                        setSelection
-                        console.log("works")
-                    }
-                }
                 checkedColor="blue"
+                onValueChange={(newValue) => setSelections(newValue)}
                 style={styles.checkbox}
             />
             <label>Grade 3</label>
