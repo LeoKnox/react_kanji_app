@@ -13,8 +13,8 @@ const ListView = ({ navigation }) => {
         setData(response.data);
     };
 
-    function MyCheckbox({value, onChecked, checked}) {
-        console.log("check");
+    function MyCheckbox({grade, onChecked, checked}) {
+        console.log(grade);
         return (
             <CheckBox
                 title="My Checkbox"
