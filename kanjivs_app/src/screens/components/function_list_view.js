@@ -6,9 +6,9 @@ import Card from "./shared/card";
 const ListView = ({ navigation }) => {
     const [data, setData] = useState([]);
     const [isSelected, setSelection] = useState(false);
-    const grade = 2;
+    //const grade = 2;
 
-    const getList = async () => {
+    const getList = async (grade = 2) => {
         const response = await client.get("/grade/?grade="+grade);
         setData(response.data);
     };
