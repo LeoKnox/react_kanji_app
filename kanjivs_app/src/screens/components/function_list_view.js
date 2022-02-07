@@ -17,6 +17,7 @@ const ListView = ({ navigation }) => {
         const [isSelected, setSelection] = useState(false);
         if (isSelected) {
             console.log(grade);
+            getList(grade = 3);
         }
         return (
             <>
