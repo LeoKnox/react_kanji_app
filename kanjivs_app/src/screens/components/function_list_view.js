@@ -13,8 +13,8 @@ const ListView = ({ navigation }) => {
         setData(response.data);
     };
 
-    function MyCheckbox({grade}) {
-        const [isSelected, setSelection] = useState(false);
+    function MyCheckbox({grade, isSelected}) {
+        //const [isSelected, setSelection] = useState(false);
         if (isSelected) {
             getList(grade = 3);
             console.log(grade);
@@ -24,7 +24,7 @@ const ListView = ({ navigation }) => {
             <CheckBox
                 value={isSelected}
                 title="My Checkbox"
-                onClick={setSelection}
+                onValueChange={setSelection}
             />
             <Text>T: {isSelected ? "1" : "2"}</Text>
             </>
@@ -68,6 +68,7 @@ const ListView = ({ navigation }) => {
             <label>Grade 3</label>
             <MyCheckbox
                 grade = "3"
+                isSelected={isSelected}
                 checked={isSelected}
             />
             <Text>ddd: {isSelected} </Text>
