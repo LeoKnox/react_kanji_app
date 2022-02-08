@@ -13,9 +13,10 @@ const ListView = ({ navigation }) => {
         setData(response.data);
     };
 
-    function MyCheckbox({grade, isSelected}) {
+    function MyCheckbox({grade}) {
         //const [isSelected, setSelection] = useState(false);
         if (isSelected) {
+            setSelection = false;
             getList(grade = 3);
             console.log(grade);
         }
@@ -37,7 +38,7 @@ const ListView = ({ navigation }) => {
 
     const setSelections = (value) => {
         if (isSelected === false) {
-            isSelected = true
+            isSelected = true;
             console.log("one");
         } else {
             isSelected = false
