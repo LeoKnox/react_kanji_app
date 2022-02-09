@@ -14,19 +14,19 @@ const ListView = ({ navigation }) => {
     };
 
     function MyCheckbox({grade}) {
-        const [isSelected, setSelection] = useState(false);
-        if (isSelected) {
+        const [isSelected2, setSelection] = useState(false);
+        if (isSelected2) {
             getList(grade = 3);
             console.log(grade);
         }
         return (
             <>
             <CheckBox
-                value={isSelected}
+                value={isSelected2}
                 title="My Checkbox"
                 onValueChange={setSelection}
             />
-            <Text>T: {isSelected ? "1" : "2"}</Text>
+            <Text>T: {isSelected2 ? "1" : "2"}</Text>
             </>
         )
     }
