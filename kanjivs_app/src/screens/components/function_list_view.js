@@ -14,9 +14,8 @@ const ListView = ({ navigation }) => {
     };
 
     function MyCheckbox({grade}) {
-        //const [isSelected, setSelection] = useState(false);
+        const [isSelected, setSelection] = useState(false);
         if (isSelected) {
-            setSelection = false;
             getList(grade = 3);
             console.log(grade);
         }
@@ -72,7 +71,6 @@ const ListView = ({ navigation }) => {
                 isSelected={isSelected}
                 checked={isSelected}
             />
-            <Text>ddd: {isSelected} </Text>
             <FlatList
                 data={data}
                 keyExtractor={(item) => item.idkanji_dict.toString()}
