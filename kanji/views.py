@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from rest_framework import generics
-from .serializers import KanjiListSerializer, KanjiDetailSerializer
+from .serializers import KanjiListSerializer, KanjiDetailSerializer, KanjiGradeSerializer
 from .models import Kanji
 from django_filters.rest_framework import DjangoFilterBackend
 
@@ -12,7 +12,7 @@ class KanjiGradeAPIView(generics.ListAPIView):
     queryset = Kanji.objects.all().values_list('grade', flat=True).distinct()
     #x = Kanji.objects.all().values_list('grade', flat=True).distinct().count()
     #print("*******" + str(x))
-    serializer_class = KanjiListSerializer
+    serializer_class = KanjiGradeSerializer
 
 '''
 class KanjiGradeAPIView(generics.ListAPIView):
