@@ -12,7 +12,7 @@ const ListView = ({ navigation }) => {
         const response = await client.get("/grade/?grade="+grade);
         setData(response.data);
     };
-
+/*
     function MyCheckbox({grade}) {
         const [isSelected, setSelection] = useState(false);
         if (isSelected) {
@@ -45,9 +45,10 @@ const ListView = ({ navigation }) => {
         }
         console.log(value);
     };
-    
+    */
     const mytext = "learn Kanji";
     return (
+        /*
         <SafeAreaView style={styles.center}>
             <Text style={styles.baseText}>Kanji Learning App</Text>
             <Text style={styles.newText}>{mytext}</Text>
@@ -70,7 +71,8 @@ const ListView = ({ navigation }) => {
                     );
                 }}
             />
-        </SafeAreaView>
+        </SafeAreaView>*/
+        <p>ddd {data[0]}</p>
     )
 };
 
