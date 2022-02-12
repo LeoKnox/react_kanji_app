@@ -10,12 +10,12 @@ class KanjiListAPIView(generics.ListAPIView):
 
 class KanjiGradeAPIView(generics.ListAPIView):
     queryset = Kanji.objects.all().values_list('grade', flat=True).distinct()
-    x = Kanji.objects.all().values_list('grade', flat=True).distinct().count()
+    y = Kanji.objects.all()
     #x = Kanji.objects.all().values_list('grade', flat=True).distinct().count()
-    print("*******" + str(x))
+    #queryset = Kanji.objects.all().filter(grade=1)
+    #print("*******" + str(x))
+    print(y)
     serializer_class = KanjiGradeSerializer
-    def get_quester(self):
-        return (KanjiGradeSerializer(queryset, many=true).data)
 
 '''
 class KanjiGradeAPIView(generics.ListAPIView):
