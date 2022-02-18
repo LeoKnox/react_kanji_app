@@ -12,20 +12,20 @@ const ListView = ({ navigation }) => {
         const response = await client.get("/grade/?grade="+grade);
         setData(response.data);
     };
-/*
+
     function MyCheckbox({grade}) {
         const [isSelected, setSelection] = useState(false);
         if (isSelected) {
             getList(3);
             console.log(grade);
-            setSelection(!isSelected);
+            //setSelection(!isSelected);
         }
         return (
             <>
             <CheckBox
                 value={isSelected}
                 title="My Checkbox"
-                onValueChange={(setSelection)}
+                onValueChange={() => setSelection(isSelected)}
             />
             <Text>T: {isSelected ? "1" : "2"}</Text>
             </>
@@ -34,7 +34,7 @@ const ListView = ({ navigation }) => {
 
     useEffect(() => {
         getList();
-    }, []);
+    }, [isSelected]);
 
     const setSelections = (value) => {
         if (isSelected === false) {
@@ -45,14 +45,31 @@ const ListView = ({ navigation }) => {
         }
         console.log(value);
     };
-    */
+    
     const mytext = "learn Kanji";
     return (
-        /*
         <SafeAreaView style={styles.center}>
             <Text style={styles.baseText}>Kanji Learning App</Text>
             <Text style={styles.newText}>{mytext}</Text>
             <Text>{data.length} Kanjis</Text>
+            <label>Grade 1</label>
+            <CheckBox
+                title="One"
+                value={1}
+                onValueChange={(newValue) => setSelections(newValue)}
+                style={styles.checkbox}
+            />
+            <label>Grade 2</label>
+            <CheckBox
+                value={isSelected}
+                checkedColor="blue"
+                onChange={setSelection}
+                style={styles.checkbox}
+            />
+            <label>Grade 3</label>
+            <MyCheckbox
+                grade = "3"
+            />
             <FlatList
                 data={data}
                 keyExtractor={(item) => item.idkanji_dict.toString()}
@@ -60,19 +77,18 @@ const ListView = ({ navigation }) => {
                     return (
                         <TouchableOpacity
                             onPress={() => {
-                                navigation.navigate("Detail", {objurl: item, hey: "It's Kanji"});
+                                navigation.navigate("Detail", {objurl: item.absolute_url, hey: "It's Kanji"});
                             }}
                         >
                             <Card
-                                kanji={item}
-                                meaning={item}
+                                kanji={item.kanji}
+                                meaning={item.meaning}
                             />
                         </TouchableOpacity>
                     );
                 }}
             />
-        </SafeAreaView>*/
-        <p>ddd {data[0]}</p>
+        </SafeAreaView>
     )
 };
 
