@@ -25,7 +25,7 @@ const ListView = ({ navigation }) => {
             <CheckBox
                 value={isSelected}
                 title="My Checkbox"
-                onValueChange={() => setSelection(isSelected)}
+                onValueChange={() => setSelection(!isSelected)}
             />
             <Text>T: {isSelected ? "1" : "2"}</Text>
             </>
