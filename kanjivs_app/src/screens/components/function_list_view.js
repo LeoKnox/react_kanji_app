@@ -19,13 +19,13 @@ const ListView = ({ navigation }) => {
             getList(3);
             console.log(grade);
             //setSelection(!isSelected);
-        }
+        } 
         return (
             <>
             <CheckBox
                 value={isSelected}
                 title="My Checkbox"
-                onValueChange={() => setSelection(!isSelected)}
+                onValueChange={(e) => setSelection(!isSelected)}
             />
             <Text>T: {isSelected ? "1" : "2"}</Text>
             </>
